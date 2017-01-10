@@ -1,0 +1,10 @@
+{
+  "name": "xsolve",
+  "homepage": "https://github.com/tomasz-baron/xsolve",
+  "description": "xsolve",
+  "main": "",
+  "license": "MIT",
+  "dependencies": {
+    "angular": "1.6.0"
+  }
+}

@@ -1,0 +1,9 @@
+@import "variables";
+@import "mixins";
+
+.body {
+    background-color: $backgroundColor;
+    @include font-size(1.5);
+    color: $fontColor;
+    font-family: $font;
+}

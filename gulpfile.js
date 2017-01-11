@@ -5,9 +5,11 @@ var connect = require('gulp-connect'),
 	watch = require('gulp-watch'),
 	inject = require('gulp-inject'),
 	runSequence = require('gulp-run-sequence'),
-	concat = require('gulp-concat');
+	concat = require('gulp-concat'),
+	expressServer = require('gulp-express');
 
 gulp.task('connect', function() {
+	expressServer.run(['server.js']);
     connect.server({
         port: 8000,
 		livereload: true,
@@ -30,13 +32,13 @@ gulp.task('resource', function() {
 	return gulp
 		.src(['./dev/**/*',
 			'!dev/**/*.scss', 
-			'!dev/libs'])
+			'!dev/libs/**/*.*'])
 		.pipe(gulp.dest('./build/'));
 });
 
 gulp.task('libs', function() {
 	return gulp
-		.src(['js/libs/**/*.min.js'])
+		.src(['dev/libs/**/*.min.js'])
 		.pipe(gulp.dest('./build/libs'));
 });
 

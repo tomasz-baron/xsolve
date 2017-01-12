@@ -12,3 +12,9 @@
   background: -ms-linear-gradient(bottom, $endColor, $startColor);
   background: -o-linear-gradient(bottom, $endColor, $startColor);
 }
+
+@mixin elipsis() {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

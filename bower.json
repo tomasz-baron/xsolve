@@ -5,6 +5,7 @@
   "main": "",
   "license": "MIT",
   "dependencies": {
-    "angular": "1.6.0"
+    "angular": "1.6.0",
+    "angular-images-loaded": "^0.2.5"
   }
 }

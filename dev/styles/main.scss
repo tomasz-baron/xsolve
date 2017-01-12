@@ -4,10 +4,31 @@
 html {
     font-size: 62.5%;
 
-    .body {
+    body {
         background-color: $backgroundColor;
         @include font-size(1.7);
         color: $fontColor;
         font-family: $font;
+
+        header {
+            margin: 0 10%;
+        }
+        main {
+            margin: 0 10%;
+        }
+        footer {
+            margin: 70px 10% 25px 10%;
+            text-align: center;
+            .button-more {
+                background-color: #252525;
+                color: #a5a1a1;
+                @include font-size(1.7);
+                font-weight: bold;
+                padding: 15px 15%;
+                min-width: 300px;
+                border: 2px solid #cccccc;
+                cursor: pointer;
+            }
+        }
     }
 }

@@ -9,10 +9,16 @@
 	<!-- endinject -->
     <title>xSolve</title>
 </head>
-<body class="body" ng-controller="mainCtrl">
-    <search-field></search-field>
-    <media-row media-list="aa"></media-row>
-    <media-row media-list="aa"></media-row>
-    <button class="button-more"></button>
+<body ng-controller="mainCtrl">
+    <header>
+        <search-field query="query" item-size="itemSize"></search-field>
+    </header>
+    <main>
+        <media-row media-list="aa"></media-row>
+        <media-row media-list="aa"></media-row>
+    </main>
+    <footer>
+        <button class="button-more">More ></button>
+    </footer>
 </body>
 </html>

@@ -3,7 +3,8 @@ angular.module('main')
     return {
         restrict: 'E',
         scope: {
-            query: '='
+            query: '=',
+            itemSize: '='
         },
         templateUrl: 'scripts/directives/search-field/search-field.html'
     }

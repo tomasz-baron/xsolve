@@ -6,11 +6,13 @@
     display: block;
     text-align: center;
     margin-bottom: 30px;
+
     .media-item {
         display: inline-block;
         margin: 0 15px;
         text-align: left;
     }
+
     .button {
         background-color: $fontColor;
         width: 50px;
@@ -27,9 +29,12 @@
             font-family: "Flaticon";
             font-style: normal;
             font-weight: bold;
+            cursor: pointer;
+
             &.arrow-left {
                 margin-left: -6px;
             }
+            
             &.arrow-right {
                 margin-left: 6px;
             }

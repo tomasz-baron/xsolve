@@ -1,3 +1,5 @@
 <div class="media-row-container">
-    <media-item class="media-item" ng-repeat="media in mediaList" ></media-item>
+    <button class="button"><i class="arrows arrow-left"></i></button>
+    <media-item url="media.url" text="media.text" ng-repeat="media in mediaList" class="media-item"></media-item>
+    <button class="button"><i class="arrows arrow-right"></i></button>
 </div>

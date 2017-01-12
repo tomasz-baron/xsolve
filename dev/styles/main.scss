@@ -1,9 +1,13 @@
 @import "variables";
 @import "mixins";
 
-.body {
-    background-color: $backgroundColor;
-    @include font-size(1.5);
-    color: $fontColor;
-    font-family: $font;
+html {
+    font-size: 62.5%;
+
+    .body {
+        background-color: $backgroundColor;
+        @include font-size(1.7);
+        color: $fontColor;
+        font-family: $font;
+    }
 }

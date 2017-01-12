@@ -3,7 +3,8 @@ angular.module('main')
     return {
         restrict: 'E',
         scope: {
-            
+            text: '=',
+            url: '='            
         },
         templateUrl: 'scripts/directives/media-item/media-item.html'
     }

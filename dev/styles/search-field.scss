@@ -1,0 +1,10 @@
+@import "variables";
+@import "mixins";
+
+.search-field-container {
+    input {
+        @include gradient(#4b4b4b, #141414);
+        border: 2px solid #cccccc;
+    }
+    
+}

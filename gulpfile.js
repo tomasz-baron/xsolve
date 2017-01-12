@@ -6,7 +6,8 @@ var connect = require('gulp-connect'),
 	inject = require('gulp-inject'),
 	runSequence = require('gulp-run-sequence'),
 	concat = require('gulp-concat'),
-	expressServer = require('gulp-express');
+	expressServer = require('gulp-express'),
+	eslint = require("gulp-eslint");
 
 gulp.task('connect', function() {
 	expressServer.run(['server.js']);
@@ -19,6 +20,17 @@ gulp.task('connect', function() {
 
 gulp.task('clean', function() {
 	return del('build');
+});
+
+gulp.task('lint', function () {
+	return gulp.src(['./dev/scripts/**/*.js'])
+		.pipe(eslint({
+			config: ".eslintrc",
+			fix: true
+		}))
+		.pipe(eslint.format())
+		.pipe(eslint.failAfterError())
+		.pipe(gulp.dest('./dev/scripts/'));
 });
 
 gulp.task('index', function () {
@@ -54,7 +66,7 @@ gulp.task('serve', function() {
 
 gulp.task('default', ['serve'], function() {
 	gulp.watch(['./dev/styles/**/*.scss'], ['sass', 'index']);
-	gulp.watch(['./dev/views/*.html', './dev/scripts/**/*.js'], ['resource', 'index']);
+	gulp.watch(['./dev/scripts/**/*.*'], ['resource', 'index']);
     gulp.watch(['./dev/index.html'], ['index']);
     gulp.watch(['./dev/libs/**/*.js'], ['libs', 'index']);
 });

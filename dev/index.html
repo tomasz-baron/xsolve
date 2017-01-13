@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html ng-app="main">
 <head>
-    <script src="libs/angular.min.js"></script>
     <!-- libs:js -->
 	<!-- endinject -->
 	<!-- inject:js -->
@@ -14,11 +13,12 @@
     <header>
         <search-field query="query" item-size="itemSize"></search-field>
     </header>
-    <main images-loaded-events="ctrl.imgLoadedEvents">
+    <main>
         <media-row media-list="mediaRow" ng-repeat="mediaRow in mediaRows"></media-row>
     </main>
     <footer>
         <button class="button-more" ng-click="addRow()">More ></button>
     </footer>
+    <loading-modal></loading-modal>
 </body>
 </html>

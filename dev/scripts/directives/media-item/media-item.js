@@ -4,7 +4,8 @@ angular.module('main')
         restrict: 'E',
         scope: {
             text: '=',
-            url: '='            
+            url: '=',
+            active: '='          
         },
         templateUrl: 'scripts/directives/media-item/media-item.html'
     }

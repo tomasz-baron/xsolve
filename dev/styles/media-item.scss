@@ -2,19 +2,23 @@
 @import "mixins";
 
 .media-item-container {
-    width: 400px;
-    height: 325px;
+    width: $itemWidth;
+    height: $itemHeight;
     border: 2px solid #cccccc;
 
+    &.hidden {
+        opacity: 0.4;
+    }
+
     .media-image {
-        width: 400px;
-        height: 325px;
+        width: $itemWidth;
+        height: $itemHeight;
     }
 
     .media-text {
         position: relative;
         background-color: rgba(51, 51, 51, 0.7);
-        width: 400px;
+        width: $itemWidth;
         height: 55px;
         margin-top: -60px;
         @include font-size(2);

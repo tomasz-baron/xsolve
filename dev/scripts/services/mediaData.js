@@ -1,13 +1,25 @@
 angular.module('main')
-.factory('mediaData', function() {
+.factory('mediaData', ['mediaApi', function(mediaApi) {
     var mediaItems = {},
         mediaItemsLength,
         moreAvailable,
         maxId;
 
     var add = function(item) {
-        mediaItems[item.id] = item;
+        mediaItems[item.id] = {
+            id: item.id, 
+            url: item.images.standard_resolution.url, 
+            text: item.caption.text,
+            active: true
+        };
     }; 
+
+
+    var getDataFromApi = function() {
+        return mediaApi.getMedia(maxId).then(function(data) {
+            addAll(data);
+        });
+    }
 
     var addAll = function(data) {
         moreAvailable = data.more_available;
@@ -52,7 +64,8 @@ angular.module('main')
         getMaxId: getMaxId,
         getMoreAvaible: getMoreAvaible,
         getItemsLength: getItemsLength,
+        getDataFromApi: getDataFromApi,
         addAll: addAll,
         remove: remove
 	};
-});
+}]);

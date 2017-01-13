@@ -35,7 +35,7 @@ gulp.task('lint', function () {
 
 gulp.task('index', function () {
 	return gulp.src('dev/index.html')
-		.pipe(inject(gulp.src(['./build/libs/**/*.js', '!build/libs/angular.min.js']), {addRootSlash: false, ignorePath: 'build', name: 'libs'}))
+		.pipe(inject(gulp.src(['./build/libs/**/*.js']), {addRootSlash: false, ignorePath: 'build', name: 'libs'}))
 		.pipe(inject(gulp.src(['./build/scripts/**/*.js', './build/styles/**/*.css'], {read: false}), {addRootSlash: false, ignorePath: 'build'}))
 		.pipe(gulp.dest('./build/'));
 });
@@ -50,10 +50,7 @@ gulp.task('resource', function() {
 
 gulp.task('libs', function() {
 	return gulp
-		.src(['dev/libs/angular/angular.min.js', 
-			'dev/libs/angular-images-loaded/angular-images-loaded.js',
-			'dev/libs/ev-emitter/ev-emitter.js',
-			'dev/libs/imagesloaded/imagesloaded.pkgd.min.js'])
+		.src(['dev/libs/**/*.min.js'])
 		.pipe(gulp.dest('./build/libs'));
 });
 
@@ -69,7 +66,7 @@ gulp.task('serve', function() {
 
 gulp.task('default', ['serve'], function() {
 	gulp.watch(['./dev/styles/**/*.scss'], ['sass', 'index']);
-	gulp.watch(['./dev/scripts/**/*.*'], ['resource', 'index']);
+	gulp.watch(['./dev/scripts/**/*'], ['resource', 'index']);
     gulp.watch(['./dev/index.html'], ['index']);
     gulp.watch(['./dev/libs/**/*.js'], ['libs', 'index']);
 });

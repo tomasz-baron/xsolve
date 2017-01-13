@@ -51,7 +51,7 @@ angular.module('main')
         return maxId;
     };
 
-    var getMoreAvaible = function() {
+    var getMoreAvailable = function() {
         return moreAvailable;
     }
 
@@ -62,7 +62,7 @@ angular.module('main')
 	return {
         getMediaItems: getMediaItems,
         getMaxId: getMaxId,
-        getMoreAvaible: getMoreAvaible,
+        getMoreAvailable: getMoreAvailable,
         getItemsLength: getItemsLength,
         getDataFromApi: getDataFromApi,
         addAll: addAll,

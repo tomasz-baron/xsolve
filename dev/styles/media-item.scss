@@ -5,6 +5,8 @@
     width: $itemWidth;
     height: $itemHeight;
     border: 2px solid #cccccc;
+    margin: 0 auto;
+    display: block;
 
     &.hidden {
         opacity: 0.4;

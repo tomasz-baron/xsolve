@@ -1,18 +1,23 @@
 angular.module('main')
 .factory('viewRows', ['mediaData', 'MAX_MEDIA_FOR_ROW', function(mediaData, MAX_MEDIA_FOR_ROW) {
     var viewRows = [],
-        query = '';
+        query = '',
+        noMoreAvailable;
 
     var addRows = function() {
-        if (mediaData.getItemsLength() < MAX_MEDIA_FOR_ROW && mediaData.getMoreAvaible()) {
+        if (mediaData.getItemsLength() < MAX_MEDIA_FOR_ROW && mediaData.getMoreAvailable()) {
             mediaData.getDataFromApi()
             .then(function(data) {
-                viewRows.push(mediaData.getMediaItems(MAX_MEDIA_FOR_ROW));
+                pushNewRows();
             });
-        } else {
-            viewRows.push(mediaData.getMediaItems(MAX_MEDIA_FOR_ROW));
+        } else if (mediaData.getItemsLength()){
+            pushNewRows();
         }        
-    }; 
+    };
+    var pushNewRows = function() {
+        viewRows.push(mediaData.getMediaItems(MAX_MEDIA_FOR_ROW));
+        noMoreAvailable = (!mediaData.getMoreAvailable() && mediaData.getItemsLength() === 0);
+    } ;
 
     var initRows = function() {
          mediaData.getDataFromApi()
@@ -24,6 +29,10 @@ angular.module('main')
     
     var getRows = function() {
         return viewRows;
+    };
+
+    var getNoMoreAvailable = function() {
+        return noMoreAvailable;
     };
 
     var compare = function(searchQuery) {
@@ -49,6 +58,7 @@ angular.module('main')
         getRows: getRows,
         addRows: addRows,
         initRows: initRows,
-        compare: compare
+        compare: compare,
+        getNoMoreAvailable: getNoMoreAvailable
 	};
 }]);

@@ -17,7 +17,7 @@
         <media-row media-list="mediaRow" ng-repeat="mediaRow in mediaRows"></media-row>
     </main>
     <footer>
-        <button class="button-more" ng-click="addRow()">More ></button>
+        <button ng-hide="noMoreAvailable" class="button-more" ng-click="addRow()">More ></button>
     </footer>
     <loading-modal></loading-modal>
 </body>

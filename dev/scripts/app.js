@@ -4,12 +4,11 @@ angular.module('main', [])
 .constant('MAX_VIEW_MEDIA_FOR_ROW', 3)
 .constant('API_URL', 'http://localhost:3000/api/media')
 
-.controller('mainCtrl', ['$scope', 'mediaApi', 'mediaData', 'viewRows', 'MAX_MEDIA_FOR_ROW', function ($scope, mediaApi, mediaData, viewRows, MAX_MEDIA_FOR_ROW) {
-    //$scope.mediaRows = [];
+.controller('mainCtrl', ['$scope', 'viewRows', function ($scope, viewRows) {
     $scope.query = '';
-    $scope.itemSize;  
     $scope.mediaRows = viewRows.getRows();
     var loadedPage = false;
+
     $scope.$on('stop.request', function() {
         loadedPage = true;
     });
@@ -19,6 +18,10 @@ angular.module('main', [])
     }
 
     init();
+
+    $scope.$watch('mediaRows.length', function() {
+        $scope.noMoreAvailable = viewRows.getNoMoreAvailable();
+    });
 
     $scope.$watchGroup(['query', 'mediaRows.length'], function() {
         if (!loadedPage) return;

@@ -1,5 +1,11 @@
 <div class="media-row-container">
-    <button class="button"><i class="arrows arrow-left"></i></button>
-    <media-item url="media.url" text="media.text" active="media.active" ng-repeat="media in viewList" class="media-item"></media-item>
-    <button class="button"><i class="arrows arrow-right"></i></button>
+    <div class="button-container">
+        <button class="button left"><i class="arrows arrow-left"></i></button>
+    </div>
+    <div class="main-container">
+        <media-item url="media.url" text="media.text" active="media.active" ng-repeat="media in viewList" class="media-item"></media-item>
+    </div>
+    <div class="button-container">
+        <button class="button right"><i class="arrows arrow-right"></i></button>
+    </div>
 </div>

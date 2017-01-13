@@ -3,41 +3,56 @@
 @import url(flaticon.css);
 
 .media-row-container {
-    display: block;
-    text-align: center;
+    display: flex;
+    flex-direction: row;
     margin-bottom: 30px;
 
-    .media-item {
-        display: inline-block;
-        margin: 0 15px;
-        text-align: left;
+    .main-container {
+        width: 86%;
+
+        .media-item {
+            display: inline-block;
+            text-align: left;
+            width: 33.3%;
+        }
     }
 
-    .button {
-        background-color: $fontColor;
-        width: 50px;
-        height: 50px;
-        color: $backgroundColor;
-        outline: none;
-        border-radius: 50%;
-        border: 0;
-        position: relative;
-        top: -140px;
+    .button-container {
+        width: 7%;
+        min-width: 55px;
 
-        .arrows {
-            @include font-size(3.2);
-            font-family: "Flaticon";
-            font-style: normal;
-            font-weight: bold;
-            cursor: pointer;
+        .button {
+            background-color: $fontColor;
+            width: 50px;
+            height: 50px;
+            color: $backgroundColor;
+            border-radius: 50%;
+            border: 0;
+            margin-top: 130px;
 
-            &.arrow-left {
-                margin-left: -6px;
+            &.left {
+                float: right;
             }
-            
-            &.arrow-right {
-                margin-left: 6px;
+
+            &.right {
+                float: left;
             }
-        }    
+
+            .arrows {
+                @include font-size(3.2);
+                font-family: "Flaticon";
+                font-style: normal;
+                font-weight: bold;
+                cursor: pointer;
+
+                &.arrow-left {
+                    margin-left: -6px;
+                }
+                
+                &.arrow-right {
+                    margin-left: 6px;
+                }
+            }    
+        }
     }
 }

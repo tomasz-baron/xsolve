@@ -8,20 +8,21 @@ angular.module('main', [])
     //$scope.mediaRows = [];
     $scope.query = '';
     $scope.itemSize;  
-    $scope.mediaRows = viewRows.get();
+    $scope.mediaRows = viewRows.getRows();
+    var loadedPage = false;
+    $scope.$on('stop.request', function() {
+        loadedPage = true;
+    });
     
     var init = function() {
-        mediaApi.getMedia().then(function(data) {
-            mediaData.addAll(data);
-            viewRows.addRows();
-            viewRows.addRows();
-		});
+        viewRows.initRows();
     }
 
     init();
 
-    $scope.$watch('query', function() {
-        console.log($scope.query);
+    $scope.$watchGroup(['query', 'mediaRows.length'], function() {
+        if (!loadedPage) return;
+        viewRows.compare($scope.query);
     });
 
     $scope.addRow = function() {

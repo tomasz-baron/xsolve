@@ -1,7 +1,8 @@
 angular.module('main', [])
 
 .constant('MAX_MEDIA_FOR_ROW', 6)
-.constant('MAX_VIEW_MEDIA_FOR_ROW', 3)
+.constant('MAX_VIEW_MEDIA_FOR_ROW_L', 3)
+.constant('MAX_VIEW_MEDIA_FOR_ROW_S', 2)
 .constant('API_URL', 'http://localhost:3000/api/media')
 
 .controller('mainCtrl', ['$scope', 'viewRows', function ($scope, viewRows) {

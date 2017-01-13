@@ -2,10 +2,9 @@
 @import "mixins";
 
 .media-item-container {
-    width: $itemWidth;
     height: $itemHeight;
     border: 2px solid #cccccc;
-    margin: 0 auto;
+    margin: 0 20px;
     display: block;
 
     &.hidden {

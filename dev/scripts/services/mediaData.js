@@ -1,5 +1,5 @@
-angular.module('main')
-.factory('mediaData', ['mediaApi', function(mediaApi) {
+angular.module('main.mediaData', [])
+.factory('MediaData', ['MediaApi', function(MediaApi) {
     var mediaItems = {},
         mediaItemsLength,
         moreAvailable,
@@ -16,7 +16,7 @@ angular.module('main')
 
 
     var getDataFromApi = function() {
-        return mediaApi.getMedia(maxId).then(function(data) {
+        return MediaApi.getMedia(maxId).then(function(data) {
             addAll(data);
         });
     }

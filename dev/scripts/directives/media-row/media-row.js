@@ -6,7 +6,7 @@ angular.module('main')
             mediaList: '='
         },
         templateUrl: 'scripts/directives/media-row/media-row.html',
-        controller: function($scope, $window, mediaData, MAX_VIEW_MEDIA_FOR_ROW_L, MAX_VIEW_MEDIA_FOR_ROW_S) {
+        controller: function($scope, $window, MAX_VIEW_MEDIA_FOR_ROW_L, MAX_VIEW_MEDIA_FOR_ROW_S) {
             $scope.viewList = [];
             $scope.length = MAX_VIEW_MEDIA_FOR_ROW_L;
             $scope.hideLeftArrow = true;

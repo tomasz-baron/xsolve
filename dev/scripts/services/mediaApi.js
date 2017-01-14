@@ -1,5 +1,5 @@
-angular.module('main')
-.service('mediaApi', ['$rootScope', '$http', 'API_URL', function($rootScope, $http, API_URL) {    
+angular.module('main.mediaApi', [])
+.service('MediaApi', ['$rootScope', '$http', 'API_URL', function($rootScope, $http, API_URL) {    
     this.getMedia = function(max_id) {   
         var url = API_URL;
         $rootScope.$broadcast('start.request');

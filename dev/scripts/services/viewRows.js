@@ -1,29 +1,29 @@
 angular.module('main')
-.factory('viewRows', ['mediaData', 'MAX_MEDIA_FOR_ROW', function(mediaData, MAX_MEDIA_FOR_ROW) {
+.factory('ViewRows', ['MediaData', 'MAX_MEDIA_FOR_ROW', function(MediaData, MAX_MEDIA_FOR_ROW) {
     var viewRows = [],
         query = '',
         noMoreAvailable;
 
     var addRows = function() {
-        if (mediaData.getItemsLength() < MAX_MEDIA_FOR_ROW && mediaData.getMoreAvailable()) {
-            mediaData.getDataFromApi()
+        if (MediaData.getItemsLength() < MAX_MEDIA_FOR_ROW && MediaData.getMoreAvailable()) {
+            MediaData.getDataFromApi()
             .then(function(data) {
                 pushNewRows();
             });
-        } else if (mediaData.getItemsLength()){
+        } else if (MediaData.getItemsLength()){
             pushNewRows();
         }        
     };
     var pushNewRows = function() {
-        viewRows.push(mediaData.getMediaItems(MAX_MEDIA_FOR_ROW));
-        noMoreAvailable = (!mediaData.getMoreAvailable() && mediaData.getItemsLength() === 0);
+        viewRows.push(MediaData.getMediaItems(MAX_MEDIA_FOR_ROW));
+        noMoreAvailable = (!MediaData.getMoreAvailable() && MediaData.getItemsLength() === 0);
     } ;
 
     var initRows = function() {
-         mediaData.getDataFromApi()
+         MediaData.getDataFromApi()
         .then(function(data) {
-            viewRows.push(mediaData.getMediaItems(MAX_MEDIA_FOR_ROW));
-            viewRows.push(mediaData.getMediaItems(MAX_MEDIA_FOR_ROW));
+            viewRows.push(MediaData.getMediaItems(MAX_MEDIA_FOR_ROW));
+            viewRows.push(MediaData.getMediaItems(MAX_MEDIA_FOR_ROW));
         });
     };
     

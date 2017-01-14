@@ -1,8 +1,9 @@
-angular.module('main')
+angular.module('main.viewRows', [])
 .factory('ViewRows', ['MediaData', 'MAX_MEDIA_FOR_ROW', function(MediaData, MAX_MEDIA_FOR_ROW) {
     var viewRows = [],
         query = '',
-        noMoreAvailable;
+        noMoreAvailable,
+        count;
 
     var addRows = function() {
         if (MediaData.getItemsLength() < MAX_MEDIA_FOR_ROW && MediaData.getMoreAvailable()) {
@@ -38,15 +39,18 @@ angular.module('main')
     var compare = function(searchQuery) {
         query = searchQuery;
         compareWithQuery();
+        return count;
     };
 
     var compareWithQuery = function() {
         var items = [];
+        count = 0;
         for (row in viewRows) {
             items = viewRows[row]
             for (var i = 0; i < items.length; i++) {
                 if (items[i].text.indexOf(query) != -1) {
                     items[i].active = true;
+                    count++;
                 } else {
                     items[i].active = false;
                 }       

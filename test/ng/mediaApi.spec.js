@@ -8,16 +8,10 @@ describe('Media Api Service', function() {
             "items":[{
                 "id":"1427030967931297044_1604178164",
                 "images":{
-                    "standard_resolution":{
-                        "url":"https://instagram.com/1080/15877376_139094613257916_557033485647216640_n.jpg",
-                        "width":640,
-                        "height":640
-                    }
+                    "standard_resolution":{"url":"https://instagram.com/1080/15877376_139094613257916_557033485647216640_n.jpg", "width":640, "height":640}
                 },
                 "caption":{
-                    "created_time":"1484335369",
-                    "text":"Stories everywhere!",
-                    "id":"17859214900107350"
+                    "created_time":"1484335369", "text":"Stories everywhere!", "id":"17859214900107350"
                 }
             }],
             "more_available":true

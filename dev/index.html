@@ -9,9 +9,9 @@
 	<!-- endinject -->
     <title>xSolve</title>
 </head>
-<body ng-controller="MainCtrl">
+<body ng-controller="MainCtrl" ng-show="loadedPage">
     <header>
-        <search-field query="query" item-size="itemSize"></search-field>
+        <search-field query="query" item-size="selectedItems"></search-field>
     </header>
     <main>
         <media-row media-list="mediaRow" ng-repeat="mediaRow in mediaRows"></media-row>

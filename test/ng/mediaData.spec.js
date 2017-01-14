@@ -1,4 +1,4 @@
-describe('mediaData', function() {
+describe('Media Data Factory', function() {
     beforeEach(angular.mock.module('main'))
     beforeEach(angular.mock.module('main.mediaApi'))
     beforeEach(angular.mock.module('main.mediaData'))

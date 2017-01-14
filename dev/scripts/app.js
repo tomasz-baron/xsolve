@@ -1,7 +1,8 @@
 angular.module('main', 
     [
         'main.mediaData',
-        'main.mediaApi'        
+        'main.mediaApi',
+        'main.viewRows'      
     ])
 
 .constant('MAX_MEDIA_FOR_ROW', 6)
@@ -12,10 +13,11 @@ angular.module('main',
 .controller('MainCtrl', ['$scope', 'ViewRows', function ($scope, ViewRows) {
     $scope.query = '';
     $scope.mediaRows = ViewRows.getRows();
-    var loadedPage = false;
+    $scope.selectedItems = 0;
+    $scope.loadedPage = false;
 
     $scope.$on('stop.request', function() {
-        loadedPage = true;
+        $scope.loadedPage = true;
     });
     
     var init = function() {
@@ -29,8 +31,8 @@ angular.module('main',
     });
 
     $scope.$watchGroup(['query', 'mediaRows.length'], function() {
-        if (!loadedPage) return;
-        ViewRows.compare($scope.query);
+        if (!$scope.loadedPage) return;
+        $scope.selectedItems = ViewRows.compare($scope.query);
     });
 
     $scope.addRow = function() {

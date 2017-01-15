@@ -14,19 +14,19 @@ angular.module('main.mediaData', [])
 		};
 	}; 
 
-	var getDataFromApi = function() {
-		return MediaApi.getMedia(maxId).then(function(data) {
-			addAll(data);
-		});
-	};
-
-	var addAll = function(data) {
+    var addAll = function(data) {
 		moreAvailable = data.more_available;
 		maxId = data.items[data.items.length - 1].id;
 		for (item in data.items) {
 			add(data.items[item]);
 		}
 		mediaItemsLength = Object.keys(mediaItems).length;
+	};
+
+	var getDataFromApi = function() {
+		return MediaApi.getMedia(maxId).then(function(data) {
+			addAll(data);
+		});
 	};
     
 	var remove = function(item) {

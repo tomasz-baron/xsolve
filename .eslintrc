@@ -24,20 +24,14 @@
     // used for alignment.  This is not consistent in the
     // code.
     "no-multi-spaces": 0,
-    // Style rule is: most objects use { beforeColon: false, afterColon: true }, unless aligning which uses:
-    //
-    // {
-    //   beforeColon : true,
-    //   afterColon  : true
-    // }
-    //
+    
     // eslint can't handle this, so the check is disabled.
     "key-spacing": 0,
     // Allow shadowing vars in outer scope (needs discussion)
     "no-shadow": 0,
     // Use if () { }
     //       ^ space
-    "space-after-keywords": [2, "always"],
+    "keywords-spacing": ["error", { "before": true }],
     // Use if () { }
     //          ^ space
     "space-before-blocks": [2, "always"]

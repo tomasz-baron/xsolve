@@ -13,6 +13,25 @@ angular.module('main')
             $scope.hideRightArrow = false;
             var indexStart = 0;
 
+            var clearFlag = function() {
+                for (var i = 0 ; i < $scope.mediaList.length ; i++) {
+                    $scope.mediaList[i].visible = false;
+                }
+            };
+
+            var getElements = function() {
+                $scope.viewList = [];
+                clearFlag();
+                for (var i = indexStart ; i < $scope.length + indexStart ; i++) {
+                    $scope.viewList.push($scope.mediaList[i]);
+                    $scope.mediaList[i].visible = true;
+                }
+                if ($scope.mediaList.length <= $scope.length) {
+                     $scope.hideLeftArrow = true;
+                     $scope.hideRightArrow = true;
+                }
+            };
+
             var checkWidth = function(width) {
                 $scope.length = width > 1024 ? MAX_VIEW_MEDIA_FOR_ROW_L : MAX_VIEW_MEDIA_FOR_ROW_S;
                 $scope.length = ($scope.mediaList.length >= $scope.length) ? $scope.length : $scope.mediaList.length;
@@ -35,25 +54,6 @@ angular.module('main')
 
             var init = function() {
                 checkWidth($window.innerWidth);
-            };
-
-            var clearFlag = function() {
-                for (var i = 0 ; i < $scope.mediaList.length ; i++) {
-                    $scope.mediaList[i].visible = false;
-                }
-            };
-            
-            var getElements = function() {
-                $scope.viewList = [];
-                clearFlag();
-                for (var i = indexStart ; i < $scope.length + indexStart ; i++) {
-                    $scope.viewList.push($scope.mediaList[i]);
-                    $scope.mediaList[i].visible = true;
-                }
-                if ($scope.mediaList.length <= $scope.length) {
-                     $scope.hideLeftArrow = true;
-                     $scope.hideRightArrow = true;
-                }
             };
 
             init();

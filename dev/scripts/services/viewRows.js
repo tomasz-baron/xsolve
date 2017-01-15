@@ -48,7 +48,7 @@ angular.module('main.viewRows', [])
         for (row in viewRows) {
             items = viewRows[row]
             for (var i = 0; i < items.length; i++) {
-                if (items[i].text.indexOf(query) != -1) {
+                if (items[i].text.indexOf(query) != -1 && items[i].visible) {
                     items[i].active = true;
                     count++;
                 } else {

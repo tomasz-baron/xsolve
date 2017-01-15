@@ -31,7 +31,12 @@ angular.module('main',
         $scope.noMoreAvailable = ViewRows.getNoMoreAvailable();
     });
 
-    $scope.$watchGroup(['query', 'mediaRows.length'], function() {
+    $scope.$watch('mediaRows', function() {
+        if (!$scope.loadedPage) return;
+        $scope.selectedItems = ViewRows.compare($scope.query);
+    }, true);
+
+    $scope.$watch('query', function() {
         if (!$scope.loadedPage) return;
         $scope.selectedItems = ViewRows.compare($scope.query);
     });

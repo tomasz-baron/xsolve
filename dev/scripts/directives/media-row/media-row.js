@@ -36,11 +36,19 @@ angular.module('main')
             var init = function() {
                 checkWidth($window.innerWidth);
             };
+
+            var clearFlag = function() {
+                for (var i = 0 ; i < $scope.mediaList.length ; i++) {
+                    $scope.mediaList[i].visible = false;
+                }
+            };
             
             var getElements = function() {
                 $scope.viewList = [];
+                clearFlag();
                 for (var i = indexStart ; i < $scope.length + indexStart ; i++) {
                     $scope.viewList.push($scope.mediaList[i]);
+                    $scope.mediaList[i].visible = true;
                 }
                 if ($scope.mediaList.length <= $scope.length) {
                      $scope.hideLeftArrow = true;

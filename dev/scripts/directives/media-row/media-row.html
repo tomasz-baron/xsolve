@@ -1,0 +1,11 @@
+<div class="media-row-container">
+    <div class="button-container">
+        <button ng-hide="hideLeftArrow" ng-click="previous();" class="button left"><i class="arrows arrow-left"></i></button>
+    </div>
+    <div class="main-container">
+        <media-item url="media.url" text="media.text" active="media.active" ng-repeat="media in viewList | limitTo: length" class="media-item"></media-item>
+    </div>
+    <div class="button-container">
+        <button ng-hide="hideRightArrow" ng-click="next();" class="button right"><i class="arrows arrow-right"></i></button>
+    </div>
+</div>

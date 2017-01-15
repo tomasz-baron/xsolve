@@ -1,0 +1,14 @@
+@mixin font-size($sizeValue: 1.2) {
+  font-size: ($sizeValue * 10) + px;
+  font-size: $sizeValue + rem;
+}
+
+@mixin gradient($startColor, $endColor) {
+  background-color: $startColor;
+  background-repeat: repeat-x;
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from($startColor), to($endColor));
+  background: -webkit-linear-gradient(bottom, $endColor, $startColor);
+  background: -moz-linear-gradient(bottom, $endColor, $startColor);
+  background: -ms-linear-gradient(bottom, $endColor, $startColor);
+  background: -o-linear-gradient(bottom, $endColor, $startColor);
+}

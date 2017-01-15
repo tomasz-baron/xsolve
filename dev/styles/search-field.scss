@@ -1,0 +1,30 @@
+@import "variables";
+@import "mixins";
+
+.search-field-container {
+    width: 100%;
+    input {
+        @include gradient(#4b4b4b, #141414);
+        border: 2px solid #cccccc;
+        color: $fontColor;
+        font-family: $font;
+        font-weight: bold;
+        @include font-size(2);
+        width: 100%;
+        height: 43px;
+        padding-left: 20px;
+        box-sizing: border-box;
+    }
+
+    .message-container {
+        margin-top: 17px;
+        margin-bottom: 32px;
+        padding-left: 20px;
+        text-align: left;
+        .message {
+            @include font-size(1.8);
+            font-weight: bold;
+
+        }
+    }
+}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="main">
+<head>
+    <!-- libs:js -->
+	<!-- endinject -->
+	<!-- inject:js -->
+	<!-- endinject -->
+    <!-- inject:css -->
+	<!-- endinject -->
+    <title>xSolve</title>
+</head>
+<body ng-controller="MainCtrl" ng-show="loadedPage">
+    <header>
+        <search-field query="query" item-size="selectedItems"></search-field>
+    </header>
+    <main>
+        <media-row media-list="mediaRow" ng-repeat="mediaRow in mediaRows"></media-row>
+    </main>
+    <footer>
+        <button ng-hide="noMoreAvailable" class="button-more" ng-click="addRow()">More ></button>
+    </footer>
+    <loading-modal></loading-modal>
+</body>
+</html>

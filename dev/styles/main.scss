@@ -1,0 +1,67 @@
+@import "variables";
+@import "mixins";
+
+html {
+    font-size: 62.5%;
+    min-width: 768px;
+
+    body {
+        background-color: $backgroundColor;
+        @include font-size(1.7);
+        color: $fontColor;
+        font-family: $font;
+
+        header {
+            margin: 0 15%;
+        }
+        main {
+            margin: 0 8%;
+        }
+        footer {
+            margin: 60px 10% 15px 10%;
+            text-align: center;
+            .button-more {
+                background-color: #252525;
+                color: #a5a1a1;
+                @include font-size(1.7);
+                font-weight: bold;
+                padding: 15px 15%;
+                min-width: 350px;
+                border: 2px solid #cccccc;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+@media (max-width : 1800px) {
+    html {
+        body {
+            header {
+                margin: 0 10%;
+            }
+            main {
+                margin: 0 2%;
+            }
+            footer {
+                margin: 50px 5% 15px 5%;
+            }
+        }
+    }
+}
+
+@media (max-width : 1200px) {
+    html {
+        body {
+            header {
+                margin: 0 9%;
+            }
+            main {
+                margin: 0;
+            }
+            footer {
+                margin: 50px 2% 15px 2%;
+            }
+        }
+    }
+}

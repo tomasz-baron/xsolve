@@ -3,7 +3,7 @@
     Creation date: 12/01/2017 12:32
     */
 
-    @font-face {
+@font-face {
   font-family: "Flaticon";
   src: url("../font/Flaticon.eot");
   src: url("../font/Flaticon.eot?#iefix") format("embedded-opentype"),
@@ -21,8 +21,8 @@
   }
 }
 
-    .fi:before{
-        display: inline-block;
+.fi:before{
+  display: inline-block;
   font-family: "Flaticon";
   font-style: normal;
   font-weight: normal;
@@ -34,10 +34,10 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   font-smoothing: antialiased;
-    }
+}
 
-    .arrow-right:before { content: "\f100"; }
+.arrow-right:before { content: "\f100"; }
 .arrow-left:before { content: "\f101"; }
     
-    $font-arrow-right: "\f100";
-    $font-arrow-left: "\f101";
+$font-arrow-right: "\f100";
+$font-arrow-left: "\f101";

@@ -14,7 +14,7 @@ angular.module('main.mediaApi', [])
              $rootScope.$broadcast('stop.request');
              return response.data;
         }, function (response) {
-             $rootScope.$broadcast('error.request');
+             $rootScope.$broadcast('stop.request');
              return {};
         }); 
     };

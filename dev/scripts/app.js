@@ -23,7 +23,7 @@ angular.module('main',
     
     var init = function() {
         ViewRows.initRows();
-    }
+    };
 
     init();
 

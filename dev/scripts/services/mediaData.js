@@ -14,12 +14,11 @@ angular.module('main.mediaData', [])
         };
     }; 
 
-
     var getDataFromApi = function() {
         return MediaApi.getMedia(maxId).then(function(data) {
             addAll(data);
         });
-    }
+    };
 
     var addAll = function(data) {
         moreAvailable = data.more_available;
@@ -47,25 +46,19 @@ angular.module('main.mediaData', [])
         return itemList;
     };
 
-    var getMaxId = function() {
-        return maxId;
-    };
-
     var getMoreAvailable = function() {
         return moreAvailable;
-    }
+    };
 
     var getItemsLength = function() {
         return mediaItemsLength;
-    }
+    };
 
 	return {
         getMediaItems: getMediaItems,
-        getMaxId: getMaxId,
         getMoreAvailable: getMoreAvailable,
         getItemsLength: getItemsLength,
         getDataFromApi: getDataFromApi,
-        addAll: addAll,
-        remove: remove
+        addAll: addAll
 	};
 }]);

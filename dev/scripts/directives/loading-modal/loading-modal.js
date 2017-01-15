@@ -20,10 +20,8 @@ angular.module('main')
                     }
 				};
 
-
 			$scope.$on('start.request', showLoader);
 			$scope.$on('stop.request', hideLoader);
-			$scope.$on('error.request', hideLoader);
 		}
 	};
 }]);

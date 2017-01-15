@@ -77,5 +77,4 @@ angular.module('main')
             };
         }
     }
-
 });

@@ -9,5 +9,4 @@ angular.module('main')
         },
         templateUrl: 'scripts/directives/media-item/media-item.html'
     }
-
 });

@@ -8,5 +8,4 @@ angular.module('main')
         },
         templateUrl: 'scripts/directives/search-field/search-field.html'
     }
-
 });

@@ -2,7 +2,8 @@ angular.module('main',
     [
         'main.mediaData',
         'main.mediaApi',
-        'main.viewRows'      
+        'main.viewRows',
+        'main.limitText'   
     ])
 
 .constant('MAX_MEDIA_FOR_ROW', 6)

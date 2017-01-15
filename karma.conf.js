@@ -15,13 +15,19 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      './node_modules/angular/angular.js',
-      './node_modules/angular-mocks/angular-mocks.js',
-      './dev/scripts/app.js',
-      './dev/scripts/services/*.js',
-      './dev/scripts/filters/*.js',
-      './test/**/*.*'
+      'node_modules/angular/angular.js',
+      'node_modules/angular-mocks/angular-mocks.js',
+      'dev/scripts/app.js',
+      'dev/scripts/services/*.js',
+      'dev/scripts/filters/*.js',
+      'dev/scripts/directives/**/*.js',
+      'test/**/*.*',
+      'dev/scripts/directives/loading-modal/loading-modal.html'
     ],
+
+    ngHtml2JsPreprocessor: {
+      stripPrefix: 'dev/'
+    },
 
 
     // list of files to exclude
@@ -32,6 +38,7 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+      'dev/scripts/directives/loading-modal/loading-modal.html': 'ng-html2js'
     },
 
 
@@ -60,7 +67,6 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    //browsers: ['Chrome'],
     browsers: ['PhantomJS'],
 
 

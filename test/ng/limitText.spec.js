@@ -6,6 +6,10 @@ describe('Limit Text Filter', function() {
         limitTextFilter = $filter('limitText');
     }));
 
+    it('should return empty text', function() {
+        expect(limitTextFilter('')).toEqual('');
+    });
+
     it('should return whole text', function() {
         expect(limitTextFilter('short text')).toEqual('short text');
     });
@@ -15,5 +19,9 @@ describe('Limit Text Filter', function() {
 
     it('should return short text', function() {
         expect(limitTextFilter(text, 40)).toEqual(textFromFilter);
+    });
+
+    it('should return the same text', function() {
+        expect(limitTextFilter(text)).toEqual(text);
     });
 });

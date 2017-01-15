@@ -14,7 +14,7 @@ angular.module('main.mediaData', [])
 		};
 	}; 
 
-    var addAll = function(data) {
+	var addAll = function(data) {
 		moreAvailable = data.more_available;
 		maxId = data.items[data.items.length - 1].id;
 		for (item in data.items) {

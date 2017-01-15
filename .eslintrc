@@ -31,7 +31,7 @@
     "no-shadow": 0,
     // Use if () { }
     //       ^ space
-    "keywords-spacing": ["error", { "before": true }],
+    //"keywords-spacing": ["error", { "before": true }],
     // Use if () { }
     //          ^ space
     "space-before-blocks": [2, "always"]

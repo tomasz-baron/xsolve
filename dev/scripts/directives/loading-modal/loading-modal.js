@@ -15,9 +15,9 @@ angular.module('main')
 					if (count === 1) {
 						$elem.addClass('closed');
 					}
-                    if (count > 0) {
-                        count--;
-                    }
+					if (count > 0) {
+						count--;
+					}
 				};
 
 			$scope.$on('start.request', showLoader);
